@@ -1,0 +1,23 @@
+<%-include("../partials/header")%>
+
+<div class="container">
+    <h1>New Polling Unit Result</h1>
+    <form id="newPollingUnitForm">
+        <div class="spacer">
+            <label for="pollingUnitIdInput">Polling Unit ID:</label>
+            <input type="text" id="pollingUnitIdInput" placeholder="Enter Polling Unit ID" required>
+        </div>
+
+        <%parties.map(pt =>{%>
+            <div class="spacer">
+                <label for="partyAInput"><%=pt.partyname%>:</label>
+                <input type="number" min="0" value="0" id="partyAInput" data-name="<%=pt.partyname%>" placeholder="Votes for <%=pt.partyname%>" required>
+            </div>
+        <%})%>
+
+        <button type="submit">Save Result</button>
+    </form>
+</div>
+
+<script src="/home/js/new.js"></script>
+<%-include("../partials/footer")%>

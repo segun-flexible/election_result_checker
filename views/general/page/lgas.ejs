@@ -1,0 +1,20 @@
+    <%-include("../partials/header")%>
+    <h1>Local Government Result</h1>
+    <form id="localGovernmentForm">
+        <label for="localGovernmentSelect">Select Local Government:</label>
+        <div class="custom-select">
+            <select id="localGovernmentSelect" required>
+                <option value="">-- Select Local Government --</option>
+                <%lgas.map(lga =>{%>
+                    <option data-name="<%=lga.lga_name%>" value="<%=lga.uniqueid%>"><%=lga.lga_name%></option>
+                <%})%>
+            </select>
+        </div>
+        <button type="submit">Get Total Result</button>
+    </form>
+    <div id="totalResultContainer">
+        
+    </div>
+
+    <script src="/home/js/lga.js"></script>
+    <%-include("../partials/footer")%>
